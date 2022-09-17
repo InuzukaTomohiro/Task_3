@@ -6,6 +6,7 @@ class BooksController < ApplicationController
     def index
       @book = Book.new
       @books = Book.all
+      @User =User
 
     end
 
@@ -13,8 +14,8 @@ class BooksController < ApplicationController
     end
 
     def create
-        book = Book.find(params[:current_user])
-        book.save(parama_path)
+        book = Book.new(book_params)
+        book.save
         redirect_to books_path
 
     end
