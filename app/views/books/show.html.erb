@@ -4,10 +4,15 @@
       <h2>Book detail</h2>
       <table class="table">
         <tbody>
-          <%= form_with model: @book do |book| %>
+          <%=form_with model: @book do |book| %>
           <tr>
-            <td><%= image_tag @book.user.get_profile_image(100, 100) %></td>
-            <td><%= link_to @book.title %></td>
+            <td>
+              <%= link_to user_path(@user.id) do %>
+              <%= image_tag @user.get_profile_image(100, 100) %>
+              <br/><%= @user.name %>
+              <% end %>
+            </td>
+            <td><%= link_to @book.title, book_path(@book.id) %></td>
             <td><%= @book.body %></td>
           <% end %>
             <% if @book.user == current_user %>
