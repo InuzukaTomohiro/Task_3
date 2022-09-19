@@ -6,7 +6,7 @@
       <% end %>
       </ul>
 <% end %>
-<%= render 'user_info', book: @books, user: current_user %>
+<%= render 'user_info', book: @book, user: current_user %>
   <div class="col-md-8 offset-md-1">
     <h2>Books</h2>
     <table class="table table-hover table-inverse">
@@ -23,7 +23,7 @@
         <tr>
           <td>
           <%= link_to  book_path(books.id) do %>
-            <%= image_tag current_user.get_profile_image(80,80) %>
+            <%= image_tag books.user.get_profile_image(80, 80) %>
           <% end %>
           </td>
           <td><%= link_to books.title, book_path(books.id) %></td>
