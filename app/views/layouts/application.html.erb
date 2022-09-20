@@ -35,27 +35,42 @@
             </li>
             <li>
               <%= link_to books_path, class: "nav-link text-light" do %>
-              <i class="far fa-book-open"></i>
+              <i class="fa fa-book-open"></i>
               Books
               <% end %>
             </li>
             <li>
-              <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link text-light" %>
+              <%= link_to destroy_user_session_path, method: :delete, class: "nav-link text-light" do %>
+              <i class="fa-solid fa-right-from-bracket"></i>
+              Log out
+              <% end %>
             </li>
           </ul>
           <% else %>
           <ul class="navbar-nav ml-auto">
             <li>
-              <%= link_to "Home", "/", class: "nav-link text-light" %>
+              <%= link_to "/", class: "nav-link text-light" do %>
+              <i class="fas fa-home"></i>
+              Home
+              <% end %>
             </li>
             <li>
-              <%= link_to "About", home_about_path, class: "nav-link text-light" %>
+              <%= link_to home_about_path, class: "nav-link text-light" do %>
+              <i class="fas fa-link"></i>
+              About
+              <% end %>
             </li>
             <li>
-              <%= link_to "Sign up", new_user_registration_path, class: "nav-link text-light" %>
+              <%= link_to new_user_registration_path, class: "nav-link text-light" do %>
+              <i class="fas fa-user-plus"></i>
+              Sign up
+              <% end %>
             </li>
             <li>
-              <%= link_to "Log in", new_user_session_path, class: "nav-link text-light" %>
+              <%= link_to new_user_session_path, class: "nav-link text-light" do %>
+              <i class="fas fa-sign-in-alt"></i>
+              Log in
+              <% end %>
             </li>
           </ul>
           </div>
